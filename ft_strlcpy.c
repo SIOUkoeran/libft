@@ -1,20 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkim3 <mkim3@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/15 21:16:05 by mkim3             #+#    #+#             */
-/*   Updated: 2021/11/16 16:02:34 by mkim3            ###   ########.fr       */
+/*   Created: 2021/11/16 16:43:40 by mkim3             #+#    #+#             */
+/*   Updated: 2021/11/16 16:51:53 by mkim3            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(int c)
+size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
-	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+	int				length;
+	unsigned int	i;
+
+	i = 0;
+	length = 0;
+	while (src[length] != '\0')
+		length++;
+	while (i < size)
 	{
-		return (1);
+		dest[i] = src[i];
+		i++;
 	}
-	return (0);
+	return (length);
 }

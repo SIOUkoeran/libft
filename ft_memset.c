@@ -1,21 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   memset.c                                           :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mkim3 <mkim3@stduent.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: mkim3 <mkim3@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 22:50:02 by mkim3             #+#    #+#             */
-/*   Updated: 2021/11/15 22:50:02 by mkim3            ###   ########.fr       */
+/*   Updated: 2021/11/16 16:01:20 by mkim3            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	*ft_memset(void *p, int value, size_t num)
 {
-	int		i;
-	(unsigned char *)	temp;
+	int				i;
+	unsigned char	*temp;
 
-	
 	temp = p;
 	while (i < num)
 	{

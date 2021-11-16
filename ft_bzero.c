@@ -6,11 +6,11 @@
 /*   By: mkim3 <mkim3@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 22:55:36 by mkim3             #+#    #+#             */
-/*   Updated: 2021/11/16 15:26:07 by mkim3            ###   ########.fr       */
+/*   Updated: 2021/11/16 16:03:21 by mkim3            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-extern void *ft_memset(void *temp, int value, size_t num);
+extern void	*ft_memset(void *temp, int value, size_t num);
 
 void	ft_bzero(void *s, size_t n)
 {

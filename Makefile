@@ -1,6 +1,13 @@
 CC=gcc
 CFLAGS=-Werror -Wall -Wextra
-SRC=*.c
-OBJ=*.o
+SRCS=./*.c
+OBJS=./*.o
+NAME=libft.h
+AR=AR
+ARFLAGS=rc
 
-all : 
+all : $(NAME)
+	$(AR) $(CFLAGS) $(NAME) $(OBJS)
+
+$(OBJS) : $(SRCS)
+	$(CC) $(CFLAGS) -c $(SRCS) $(OBJS)

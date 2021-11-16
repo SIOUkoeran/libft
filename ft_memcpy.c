@@ -1,20 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkim3 <mkim3@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/15 21:16:05 by mkim3             #+#    #+#             */
-/*   Updated: 2021/11/16 16:02:34 by mkim3            ###   ########.fr       */
+/*   Created: 2021/11/16 15:36:13 by mkim3             #+#    #+#             */
+/*   Updated: 2021/11/16 15:59:33 by mkim3            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(int c)
+void	*ft_memcpy(void *dest, const void *source, size_t num)
 {
-	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+	int						i;
+	unsigned char			*temp_dst;
+	const unsigned char		*temp_src;
+
+	i = 0;
+	temp_dst = dest;
+	temp_src = source;
+	while (temp_dst[i] != '\0' && temp_src[i] != '\0' && i < num)
 	{
-		return (1);
+		temp_dst[i] = temp_src[i];
+		i++;
 	}
-	return (0);
+	return (temp_dst);
 }
