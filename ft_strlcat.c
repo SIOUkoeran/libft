@@ -6,15 +6,17 @@
 /*   By: mkim3 <mkim3@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 16:52:09 by mkim3             #+#    #+#             */
-/*   Updated: 2021/11/17 15:17:33 by mkim3            ###   ########.fr       */
+/*   Updated: 2021/12/02 17:27:21 by mkim3            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
 	unsigned int	dest_length;
 	unsigned int	src_length;
-	int				i;
+	size_t			i;
 
 	i = 0;
 	dest_length = 0;

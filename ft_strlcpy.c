@@ -6,23 +6,27 @@
 /*   By: mkim3 <mkim3@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 16:43:40 by mkim3             #+#    #+#             */
-/*   Updated: 2021/11/16 16:51:53 by mkim3            ###   ########.fr       */
+/*   Updated: 2021/12/02 16:20:48 by mkim3            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
-	int				length;
-	unsigned int	i;
+	size_t	i;
+	size_t	return_value;
 
 	i = 0;
-	length = 0;
-	while (src[length] != '\0')
-		length++;
-	while (i < size)
+	return_value = ft_strlen(src);
+	if (size != 0)
 	{
-		dest[i] = src[i];
-		i++;
+		while (i < (size - 1) && src[i] != '\0')
+		{
+			dest[i] = src[i];
+			i++;
+		}
+		dest[i] = '\0';
 	}
-	return (length);
+	return (return_value);
 }

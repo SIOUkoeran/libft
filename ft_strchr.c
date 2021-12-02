@@ -6,11 +6,13 @@
 /*   By: mkim3 <mkim3@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 21:22:22 by mkim3             #+#    #+#             */
-/*   Updated: 2021/11/16 16:28:44 by mkim3            ###   ########.fr       */
+/*   Updated: 2021/12/02 15:08:17 by mkim3            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*strchr(char const *s, char c)
+#include "libft.h"
+
+char	*ft_strchr(char const *s, int c)
 {
 	int	i;
 
@@ -18,8 +20,10 @@ char	*strchr(char const *s, char c)
 	while (s[i] != '\0')
 	{
 		if (s[i] == c)
-			return (s + i);
+			return ((char *)(s + i));
 		i++;
 	}
-	return (s + i);
+	if (s[i] == c)
+		return ((char *)(s + i));
+	return (NULL);
 }

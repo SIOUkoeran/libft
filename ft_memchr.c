@@ -6,20 +6,22 @@
 /*   By: mkim3 <mkim3@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 15:14:35 by mkim3             #+#    #+#             */
-/*   Updated: 2021/11/16 16:00:52 by mkim3            ###   ########.fr       */
+/*   Updated: 2021/12/02 14:37:07 by mkim3            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 void	*ft_memchr(const void *buf, int c, size_t count)
 {
-	int				i;
+	size_t				i;
 	unsigned char	*temp;
 
 	temp = (unsigned char *) buf;
 	i = 0;
 	while (i < count)
 	{
-		if (temp[i] == c)
+		if (temp[i] == (unsigned char)c)
 		{
 			return (temp + i);
 		}
