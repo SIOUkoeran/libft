@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkim3 <mkim3@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/16 16:43:40 by mkim3             #+#    #+#             */
-/*   Updated: 2021/12/05 13:14:49 by mkim3            ###   ########.fr       */
+/*   Created: 2021/12/05 12:11:24 by mkim3             #+#    #+#             */
+/*   Updated: 2021/12/05 13:52:28 by mkim3            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dest, const char *src, size_t size)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t	i;
-	size_t	return_value;
-
-	i = 0;
-	return_value = ft_strlen(src);
-	if (size != 0)
-	{
-		while (i < (size - 1) && src[i] != '\0')
-		{
-			dest[i] = src[i];
-			i++;
-		}
-		dest[i] = '\0';
-	}
-	return (return_value);
+	size_t	length;
+	char 	*result;
+	size_t	result_size;
+	
+	length = ft_strlen(s);
+	if (start >= length)
+		return (ft_calloc(1, sizeof(char)));
+	if (length - start <= len)
+		len = length - start;
+	result = ft_calloc(len + 1, sizeof(char));
+	if (result == NULL)
+		return (NULL);
+	result_size = ft_strlcpy(result, s + start, len + 1);
+	return (result);
 }
