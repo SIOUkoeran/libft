@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkim3 <mkim3@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/16 16:43:40 by mkim3             #+#    #+#             */
-/*   Updated: 2021/12/06 17:08:40 by mkim3            ###   ########.fr       */
+/*   Created: 2021/12/06 16:43:42 by mkim3             #+#    #+#             */
+/*   Updated: 2021/12/06 16:58:13 by mkim3            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dest, const char *src, size_t size)
+char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	size_t	i;
-	size_t	return_value;
+	char			*result;
+	unsigned int	idx;
 
-	i = 0;
-	return_value = ft_strlen(src);
-	if (size != 0)
+	idx = 0;
+	result = ft_calloc(ft_strlen(s) + 1, sizeof(char));
+	if (result == NULL)
+		return (NULL);
+	while (s[idx] != '\0')
 	{
-		while (i < (size - 1) && src[i] != '\0')
-		{
-			dest[i] = src[i];
-			i++;
-		}
-		dest[i] = '\0';
+		result[idx] = f(idx, s[idx]);
+		idx++;
 	}
-	return (return_value);
+	return (result);
 }

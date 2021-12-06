@@ -6,7 +6,7 @@
 /*   By: mkim3 <mkim3@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/05 14:56:06 by mkim3             #+#    #+#             */
-/*   Updated: 2021/12/05 15:13:35 by mkim3            ###   ########.fr       */
+/*   Updated: 2021/12/06 17:15:13 by mkim3            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,9 @@ char *ft_itoa(int n)
 {
 	char 	*result;
 	int		length;
-
+	
+	if (n == -2147483648)
+			return (ft_strdup("-2147483648"));
 	length = ft_length(n);
 	result = (char *) ft_calloc(length + 1, sizeof(char));
 	if (result == NULL)
@@ -47,9 +49,9 @@ char *ft_itoa(int n)
 	length--;
 	while (n >= 10)
 	{
-		result[length--] = n % 10 + 48;
+		result[length--] =  n % 10 + '0';
 		n /= 10;
 	}
-	return (result);
-	
+	result[length--] =  n % 10 + '0';
+	return (result);	
 }
