@@ -6,13 +6,13 @@
 /*   By: mkim3 <mkim3@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 16:43:42 by mkim3             #+#    #+#             */
-/*   Updated: 2021/12/06 16:58:13 by mkim3            ###   ########.fr       */
+/*   Updated: 2021/12/22 22:01:13 by mkim3            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	char			*result;
 	unsigned int	idx;

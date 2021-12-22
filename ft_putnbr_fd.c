@@ -6,13 +6,13 @@
 /*   By: mkim3 <mkim3@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 17:07:35 by mkim3             #+#    #+#             */
-/*   Updated: 2021/12/06 17:19:20 by mkim3            ###   ########.fr       */
+/*   Updated: 2021/12/22 22:07:36 by mkim3            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
 	if (n < 0)
 	{

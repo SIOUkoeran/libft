@@ -6,13 +6,13 @@
 /*   By: mkim3 <mkim3@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/05 14:01:59 by mkim3             #+#    #+#             */
-/*   Updated: 2021/12/05 14:57:48 by mkim3            ###   ########.fr       */
+/*   Updated: 2021/12/22 22:05:06 by mkim3            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int ft_seperate(char c, char c1)
+static int	ft_seperate(char c, char c1)
 {
 	if (c == c1)
 		return (1);
@@ -20,6 +20,7 @@ static int ft_seperate(char c, char c1)
 		return (1);
 	return (0);
 }
+
 static int	ft_count(char const *str, char c)
 {
 	int	i;
