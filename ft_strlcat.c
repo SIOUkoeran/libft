@@ -6,7 +6,7 @@
 /*   By: mkim3 <mkim3@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 16:52:09 by mkim3             #+#    #+#             */
-/*   Updated: 2021/12/05 13:13:36 by mkim3            ###   ########.fr       */
+/*   Updated: 2021/12/22 23:06:19 by mkim3            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,8 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 	i = 0;
 	dest_length = 0;
 	src_length = 0;
-	while (dest[dest_length] != '\0')
-		dest_length++;
-	while (src[src_length] != '\0')
-		src_length++;
+	dest_length = ft_strlen(dest);
+	src_length = ft_strlen(src);
 	if (dest_length > size)
 		return (size + src_length);
 	if (size > dest_length + 1)

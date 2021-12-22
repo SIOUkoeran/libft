@@ -36,4 +36,5 @@ void	ft_putendl_fd(char *s, int fd);
 char	*ft_itoa(int n);
 void	ft_putnbr_fd(int n, int fd);
 char	*ft_strnstr(const char *str1, const char *str2, size_t len);
+void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 #endif
