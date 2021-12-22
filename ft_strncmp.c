@@ -6,7 +6,7 @@
 /*   By: mkim3 <mkim3@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 22:44:52 by mkim3             #+#    #+#             */
-/*   Updated: 2021/12/22 23:22:23 by mkim3            ###   ########.fr       */
+/*   Updated: 2021/12/23 00:26:56 by mkim3            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,11 @@ int	ft_strncmp(const char *s1, const char *s2, int length)
 	temp2 = (unsigned char *)s2;
 	i = 0;
 	while (temp1[i] == temp2[i] && i < length - 1)
+	{
+		if (temp1[i] == '\0' || temp2[i] == '\0')
+			break ;
 		i++;
+	}
 	if (i == length)
 		return (0);
 	return (temp1[i] - temp2[i]);
